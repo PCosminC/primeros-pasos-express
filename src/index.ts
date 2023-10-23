@@ -1,7 +1,10 @@
 import Express from 'express';
+import path from 'path';
 
 const app: Express.Application = Express();
 const PORT: number = 3000;
+
+app.use(Express.static(path.join(__dirname, '..', 'public')));
 
 app.get("/", (req: Express.Request, res: Express.Response)=>{
     res.send("<p>Hola Mundo!<p/>");
